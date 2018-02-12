@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+
+<?import edu.cnm.deepdive.ca.View?>
+
+<GridPane xmlns="http://javafx.com/javafx"
+  xmlns:fx="http://javafx.com/fxml"
+  fx:controller="edu.cnm.deepdive.ca.Controller"
+  alignment="center"
+  hgap="10"
+  vgap="10">
+
+  <padding>
+    <Insets
+      top="10"
+      left="10"
+      right="10"
+      bottom="10"/>
+
+  </padding>
+
+  <VBox
+    GridPane.columnIndex="0"
+    GridPane.rowIndex="0"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    minWidth="120"
+    alignment="TOP_CENTER"
+    spacing="20">
+
+    <HBox
+      spacing="10">
+
+    <Button
+      fx:id="runOnceButton"
+      text="%runOnceButtonText"
+      onAction="#runOnce"
+      prefWidth="55"
+      alignment="CENTER">
+    </Button>
+
+      <Button
+        fx:id="resetButton"
+        text="%resetButtonText"
+        onAction="#reset"
+        prefWidth="55"
+        alignment="CENTER"/>
+
+    </HBox>
+
+    <VBox
+      GridPane.columnIndex="0"
+      GridPane.rowIndex="1"
+      GridPane.halignment="CENTER"
+      GridPane.valignment="CENTER"
+      minWidth="120"
+      alignment="CENTER">
+
+      <padding>
+        <Insets
+          top="10"/>
+      </padding>
+
+
+    <HBox>
+
+      <VBox
+        alignment="CENTER"
+      spacing="20">
+
+        <padding>
+          <Insets
+            top="20"/>
+        </padding>
+
+
+    <Label
+      fx:id="sliderText"
+      text="%densitySliderText"
+      labelFor="$densitySlider"
+      mnemonicParsing="true"
+    rotate="90"
+    alignment="CENTER_LEFT"/>
+
+        <TextField
+          maxWidth="35"
+          rotate="90"
+        text="%densitySliderValue"
+        alignment="CENTER_RIGHT"/>
+
+    </VBox>
+
+    <Slider
+      fx:id="densitySlider"
+      min="0"
+      max="100"
+      majorTickUnit="10"
+      minorTickCount="1"
+      snapToTicks="true"
+      showTickMarks="true"
+      showTickLabels="false"
+      blockIncrement="10"
+      value="50"
+    orientation="VERTICAL"/>
+
+    </HBox>
+
+      <HBox
+        alignment="CENTER">
+        <padding>
+          <Insets
+            top="10"/>
+        </padding>
+
+
+    <ToggleButton
+      fx:id="runForeverButton"
+      text="%runForeverButtonText"
+      onAction="#runForever"
+      prefWidth="110"
+      alignment="CENTER"/>
+
+    </HBox>
+
+      <HBox
+        alignment="CENTER"
+      spacing="5">
+        <padding>
+          <Insets
+            top="10"/>
+        </padding>
+
+        <Label
+          fx:id="generationNumber"
+          text="%generationNumberText"
+          mnemonicParsing="true"/>
+
+        <TextField
+          maxWidth="30"
+          text="%generationNumberValue"
+          alignment="CENTER_RIGHT"/>
+
+
+      </HBox>
+
+  </VBox>
+  </VBox>
+
+  <ScrollPane
+    fx:id="viewScroller"
+    GridPane.rowIndex="0"
+    GridPane.columnIndex="1"
+    GridPane.rowSpan="1"
+    GridPane.halignment="CENTER"
+    GridPane.valignment="CENTER"
+    minWidth="300"
+    minHeight="300"
+    maxWidth="800"
+    maxHeight="800"
+    pannable="true"
+    hbarPolicy="NEVER"
+    vbarPolicy="NEVER">
+
+    <View
+      fx:id="terrainView"
+      width="2000"
+      height="2000" />
+
+  </ScrollPane>
+
+
+
+
+</GridPane>
