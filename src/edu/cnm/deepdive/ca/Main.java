@@ -5,12 +5,14 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class Main extends Application {
 
   public static final int SCENE_WIDTH = 800;
   public static final int SCENE_HEIGHT = 620;
+  public static final String ICON_PATH = "resources/icon.png";
 
   @Override
   public void start(Stage primaryStage) throws Exception {
@@ -25,6 +27,7 @@ public class Main extends Application {
     primaryStage.setResizable(true);
     primaryStage.setScene(scene);
     primaryStage.show();
+    primaryStage.getIcons().add(new Image(loader.getResourceAsStream(ICON_PATH)));
   }
 
   public static void main(String[] args) {
